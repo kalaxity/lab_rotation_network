@@ -15,6 +15,6 @@ e1 = BellStateEntanglement(fidelity=0.8, name="e0")
 print("q0:", q0.state)
 print("q1:", q1.state)
 
-q2 = e1.teleportion(q0) # The transmitted qubit
+q2: Qubit = e1.teleportion(q0) # The transmitted qubit
 print("q2:", q2.measure())
 print(q0.measure(), q1.measure())
