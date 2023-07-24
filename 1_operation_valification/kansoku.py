@@ -3,6 +3,6 @@ from qns.models.qubit.qubit import Qubit
 from qns.models.qubit.const import QUBIT_STATE_P
 
 q = Qubit(QUBIT_STATE_P)
-print("state of q:", q.state)
-print("measure q:", q.measure())
-print("state of q:", q.state)
+print(f"confirm the state of q: \n{q.state}\n")
+print(f"measure q and the result is: {q.measure()}\n")
+print(f"then, re-confirm the state of q:\n{q.state}")

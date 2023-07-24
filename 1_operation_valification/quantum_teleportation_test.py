@@ -3,7 +3,7 @@ from qns.models.qubit.qubit import Qubit
 from qns.models.qubit.const import QUBIT_STATE_0, QUBIT_STATE_1
 
 def exp() -> bool:
-  # もつれモデル？の作成 
+  # 量子もつれの作成 
   e1 = BellStateEntanglement(fidelity=0.8, name="e1")
   #q0, q1 = e1.to_qubits() # もつれ量子対を得ると失敗する
 
@@ -30,3 +30,4 @@ for i in range(10000):
     failure += 1
 
 print(f"{success=}, {failure=}")
+
