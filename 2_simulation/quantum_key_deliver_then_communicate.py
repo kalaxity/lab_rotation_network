@@ -1,3 +1,7 @@
+# 鍵配送と暗号化・暗号文送信・復号を行うシミュレーション
+## 多くの関数をオーバーライドする必要があるとわかり断念
+## Simulatorあたりをどうにかできれば勝機はあるが・・・
+
 from qns.simulator.simulator import Simulator
 from qns.entity.cchannel.cchannel import ClassicChannel
 from qns.entity.qchannel.qchannel import QuantumChannel
