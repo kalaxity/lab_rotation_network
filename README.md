@@ -8,9 +8,5 @@
 │   ├── motsure.py：量子もつれの動作を確認
 │   └── quantum_teleportation_test.py：量子テレポーテーションの動作を確認
 ├── 2_simulation：量子ネットワークのシミュレーション関連
-├── README.md：このファイル
-└── key_deliver_sample：ドキュメントにあった鍵配送のサンプルコード
-    ├── qns_cls.py
-    ├── qns_test.py
-    └── qns_test1.py  
+└─── README.md：このファイル 
 ```
