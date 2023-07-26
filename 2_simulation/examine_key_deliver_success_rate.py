@@ -6,12 +6,12 @@ from qns.network.protocol.bb84 import BB84RecvApp, BB84SendApp
 import numpy as np
 
 light_speed = 299791458
-length = 100000  # 100,000 km
 
 
-def drop_rate(length):
-    # drop 0.2 db/KM
-    return 1 - np.exp(-length / 50000)
+def drop_rate(length: int) -> float:
+  # drop 0.2 db/km
+  return 1 - np.exp(-length / 50000)
+
 
 def simulate_success_rate_by_distance(length: int) -> float:
   simulate_time: int = 100 # second
@@ -51,8 +51,15 @@ def simulate_success_rate_by_distance(length: int) -> float:
 
   # BB84RecvApp's succ_key_pool counts the number of success key distribution
   # return parsentage of success to distribute keys
-  return len(rp.succ_key_pool) / (simulate_time * qubit_send_rate)
+  success_rate: float = len(rp.succ_key_pool) / (simulate_time * qubit_send_rate)
+  recv_qubits: int = len(rp.qubit_list)
+  qubit_drop_rate: float = drop_rate(length)
+  print(f"{length}km:\t{success_rate}\t({recv_qubits=}, {qubit_drop_rate=})")
+  return success_rate
 
-for dist in [100, 1000, 10000, 100000, 1000000]:
-  print(simulate_success_rate_by_distance(dist))
+
+# 距離を変えてシミュレーションを行い，鍵配送の成功率を調べる
+for dist in [1, 10, 100, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000]:
+  simulate_success_rate_by_distance(dist)
+  #print(f"{dist}km:\t{simulate_success_rate_by_distance(dist)}\t({rp.qubit_list=})")
 
