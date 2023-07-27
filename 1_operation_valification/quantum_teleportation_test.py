@@ -8,14 +8,14 @@ def exp() -> bool:
   #q0, q1 = e1.to_qubits() # もつれ量子対を得ると失敗する
 
   # 送信したい量子を作成 
-  q_sent = Qubit(QUBIT_STATE_0)
+  q_send = Qubit(QUBIT_STATE_0)
 	
   # 量子テレポーテーション：結果はq_outに渡される 
-  q_out: Qubit = e1.teleportion(q_sent)
+  q_out: Qubit = e1.teleportion(q_send)
 
   # テレポーテーションが成功したか調べて結果を返す 
-  q_sent_prev: int = 0 # q_sent.measure()にすると観測のせいで失敗する
-  if q_sent_prev == q_out.measure():
+  q_send_prev: int = 0 # q_send.measure()にすると観測のせいで失敗する
+  if q_send_prev == q_out.measure():
     return True
   return False
 
