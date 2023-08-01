@@ -59,7 +59,7 @@ def simulate_success_rate_by_distance(length: int) -> float:
 
 
 # 距離を変えてシミュレーションを行い，鍵配送の成功率を調べる
-for dist in [1, 10, 100, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000]:
+for dist in [1, 10, 100, 1000, 2000, 4000, 10000, 20000, 40000]:
   simulate_success_rate_by_distance(dist)
   #print(f"{dist}km:\t{simulate_success_rate_by_distance(dist)}\t({rp.qubit_list=})")
 
